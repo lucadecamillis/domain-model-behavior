@@ -2,7 +2,7 @@ using Dmb.Model.Interfaces;
 
 namespace Dmb.Model.Factories;
 
-public class ModelFactory
+public class ModelFactory : IModelFactory
 {
     readonly IDomainBehavior behavior;
 
