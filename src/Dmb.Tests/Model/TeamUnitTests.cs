@@ -11,8 +11,33 @@ public class TeamUnitTests
         IModelFactory factory = WireUp();
 
         Team team = factory.CreateTeam();
-
+        
         Assert.NotNull(team);
+        Assert.NotEqual(Guid.Empty, team.Id);
+    }
+
+    [Fact]
+    public void Team_AddPlayer()
+    {
+        IModelFactory factory = WireUp();
+
+        Team team = factory.CreateTeam();
+        Assert.NotEqual(Guid.Empty, team.Id);
+
+        Player player = factory.CreatePlayer();
+        Assert.NotEqual(Guid.Empty, player.Id);
+
+        team.AddPlayer(player);
+
+        Assert.Equal(1, team.Players.Count);
+
+        Bio bio = factory.CreateBio();
+
+        bio.FirstName = "Ante";
+        bio.LastName = "Rebic";
+        bio.BirthDate = new DateOnly(1993, 09, 21);
+
+        player.Bio = bio;
     }
 
     private IModelFactory WireUp()

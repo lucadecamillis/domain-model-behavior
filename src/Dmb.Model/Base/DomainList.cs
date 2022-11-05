@@ -45,4 +45,9 @@ public class DomainList<T> : IReadOnlyList<T>
     }
 
     #endregion
+
+    public void Add(T item)
+    {
+        this.behavior.AddToCollection(this.inner, item);
+    }
 }

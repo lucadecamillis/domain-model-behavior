@@ -28,4 +28,9 @@ public class Team : EntityBase
     }
 
     #endregion
+
+    public void AddPlayer(Player player)
+    {
+        this.players.Add(player);
+    }
 }

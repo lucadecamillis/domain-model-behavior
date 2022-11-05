@@ -1,8 +1,19 @@
 using System.Runtime.CompilerServices;
+using Dmb.Model.Base;
 
 namespace Dmb.Model.Interfaces;
 
 public interface IDomainBehavior
 {
-    bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string? propertyName = null);
+    void AddEntity(
+        EntityBase entity);
+
+    bool SetProperty<T>(
+        ref T storage,
+        T value,
+        [CallerMemberName] string? propertyName = null);
+
+    void AddToCollection<T>(
+        ICollection<T> collection,
+        T item);
 }

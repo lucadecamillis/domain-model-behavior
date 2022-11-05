@@ -5,8 +5,8 @@ namespace Dmb.Model;
 public class Bio : Base.ValueBase
 {
     private string? firstName;
-
     private string? lastName;
+    private DateOnly? birthDate;
 
     public string? FirstName
     {
@@ -18,6 +18,12 @@ public class Bio : Base.ValueBase
     {
         get { return this.lastName; }
         set { this.behavior.SetProperty(ref this.lastName, value); }
+    }
+
+    public DateOnly? BirthDate
+    {
+        get { return this.birthDate; }
+        set { this.behavior.SetProperty(ref this.birthDate, value); }
     }
 
     #region  CTOR
