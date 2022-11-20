@@ -24,6 +24,14 @@ public class EntityLookupBehavior : IDomainBehavior
         this.entityLookups[entity.Id] = entity;
     }
 
+    public void RemoveEntity(EntityBase entity)
+    {
+        if (this.entityLookups.ContainsKey(entity.Id))
+        {
+            this.entityLookups.Remove(entity.Id);
+        }
+    }
+
     public void AddToCollection<T>(ICollection<T> collection, T item)
     {
         collection.Add(item);

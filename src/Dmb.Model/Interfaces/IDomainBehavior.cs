@@ -8,6 +8,9 @@ public interface IDomainBehavior
     void AddEntity(
         EntityBase entity);
 
+    void RemoveEntity(
+        EntityBase entity);
+
     bool SetProperty<T>(
         ref T storage,
         T value,

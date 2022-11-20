@@ -11,6 +11,11 @@ public class DefaultBehavior : IDomainBehavior
         // NTD
     }
 
+    public void RemoveEntity(EntityBase entity)
+    {
+        // NTD
+    }
+
     public bool SetProperty<T>(
         ref T storage,
         T value,
