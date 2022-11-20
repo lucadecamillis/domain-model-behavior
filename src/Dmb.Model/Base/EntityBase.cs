@@ -11,6 +11,7 @@ public class EntityBase : ModelBase
     protected EntityBase(Guid id, IDomainBehavior behavior) : base(behavior)
     {
         this.Id = id;
+        behavior.AddEntity(this);
     }
 
     #endregion

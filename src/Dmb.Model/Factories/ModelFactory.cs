@@ -14,18 +14,14 @@ public class ModelFactory : IModelFactory
     public Team CreateTeam(Guid? id = null)
     {
         Team team = new Team(id ?? Guid.NewGuid(), this.behavior);
-
-        this.behavior.AddEntity(team);
-
+        
         return team;
     }
 
-    public Player CreatePlayer(Guid? id)
+    public Player CreatePlayer(Guid? id = null)
     {
         Player player = new Player(id ?? Guid.NewGuid(), this.behavior);
-
-        this.behavior.AddEntity(player);
-
+        
         return player;
     }
 
